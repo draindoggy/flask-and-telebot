@@ -2,7 +2,7 @@ import telebot
 import random
 import psycopg2
 import os
-bot = telebot.TeleBot('6188130039:AAHY0v8YAlYnEROpdo9MOB5xje8INuWq018')
+bot = telebot.TeleBot('')
 user_text = {}
 tovar = {}
 commands = [
@@ -45,7 +45,7 @@ def get_img(message):
     first_text = user_text.get('first', 'Текст не найден')
     second_text = user_text.get('second', 'Текст не найден')
     bot.send_message(message.chat.id, f'название товара: {first_text}\nцена товара: {second_text}\nназвание изображения: {file_name}\nid пользователя: {message.from_user.id}')
-    conn = psycopg2.connect(dbname='test', user='postgres', password='4r5t2w1q', host='127.0.0.1')
+    conn = psycopg2.connect(dbname='test', user='postgres', password='', host='127.0.0.1')
     cursor = conn.cursor()
     img = file_name
     id = message.from_user.id
