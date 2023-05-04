@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/')
 def startpage():
     title = 'каталог магазина'
-    conn = psycopg2.connect(dbname='test', user='postgres', password='4r5t2w1q', host='127.0.0.1')
+    conn = psycopg2.connect(dbname='test', user='postgres', password='', host='127.0.0.1')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM shop')
     all_data = cursor.fetchall()
